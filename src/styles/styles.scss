@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-dark-blue: hsl(209, 23%, 22%);
+        --color-very-dark-blue: hsl(207, 26%, 17%);
+        --color-very-dark-blue-alt: hsl(200, 15%, 8%);
+        --color-dark-gray: hsl(0, 0%, 52%);
+        --color-very-light-gray: hsl(0, 0%, 98%);
+        --color-white: hsl(0, 0%, 100%);
+
+        --border-radius-size: 8px;
+    }
+
+    // @mixin desktop {
+    //     @media (min-width: 1440px) {
+    //         @content;
+    //     }
+    // }
+
+    // body {
+    //     font-family: "Nunito Sans", sans-serif;
+    // }
+
+    // [data-theme="dark"] {
+    //     --body-background: var(--color-very-dark-blue);
+    //     --color-element: var(--color-dark-blue);
+    //     --text-color: var(--color-white);
+    // }
+
+    // [data-theme="light"] {
+    //     --body-background: var(--color-very-light-gray);
+    //     --color-element: var(--color-white);
+    //     --text-color: var(--color-very-dark-blue-alt);
+    // }
+
+    html,
+    body {
+        height: 100vh;
+    }
+}
