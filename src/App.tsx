@@ -29,7 +29,7 @@ const App = () => {
                 <Header />
 
                 <Route exact path="/" component={StartPage} />
-                <Route path="/detail/:name" component={DetailPage} />
+                <Route path="/detail/:alpha3Code" component={DetailPage} />
             </div>
         </HashRouter>
     );

@@ -4,11 +4,11 @@ import { useGetCountryByCodeQuery } from "../features/countries/country-api-serv
 import { Link } from "react-router-dom";
 
 interface Props {
-    name: string;
+    code: string;
 }
 
-export const FlagDetail: React.FC<Props> = ({ name }) => {
-    const { data, error, isLoading } = useGetCountryByCodeQuery(name);
+export const FlagDetail: React.FC<Props> = ({ code }) => {
+    const { data, error, isLoading } = useGetCountryByCodeQuery(code);
 
     if (isLoading) return <MessagePresenter message="Loading ..." />;
 

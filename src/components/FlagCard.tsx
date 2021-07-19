@@ -8,7 +8,7 @@ interface Props {
 export const FlagCard: React.FC<Props> = ({ country }) => {
     return (
         <Link
-            to={`/detail/${country.name}`}
+            to={`/detail/${country.alpha3Code}`}
             className="hover:scale-105 transition shadow-sm"
         >
             <div className="bg-light-primary dark:bg-dark-primary text-light-text dark:text-dark-text">
