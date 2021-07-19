@@ -5,12 +5,12 @@ import { Link, useParams } from "react-router-dom";
 import { FlagDetail } from "../components";
 
 export const DetailPage = () => {
-    let { alpha3Code } = useParams<Record<string, string | undefined>>();
+    let { name } = useParams<Record<string, string | undefined>>();
 
-    if (!alpha3Code) {
+    if (!name) {
         return (
             <div className="container mx-auto px-4 text-light-text dark:text-dark-text">
-                Must have a code
+                Must have a name
             </div>
         );
     }
@@ -29,7 +29,7 @@ export const DetailPage = () => {
                 </Link>
             </div>
 
-            <FlagDetail code={alpha3Code} />
+            <FlagDetail name={name} />
         </div>
     );
 };

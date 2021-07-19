@@ -12,7 +12,7 @@ export const countryApi = createApi({
         getCountryByCode: builder.query<CountryModel, string>({
             query: (code: string) => `alpha/${code}`,
         }),
-        searchCountryByName: builder.query<CountryModel[], string>({
+        getCountryByName: builder.query<CountryModel[], string>({
             query: (name: string) => `name/${name}`,
         }),
     }),
@@ -21,5 +21,5 @@ export const countryApi = createApi({
 export const {
     useGetCountriesQuery,
     useGetCountryByCodeQuery,
-    useSearchCountryByNameQuery,
+    useGetCountryByNameQuery,
 } = countryApi;

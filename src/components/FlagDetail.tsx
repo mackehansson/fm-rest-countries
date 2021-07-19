@@ -1,13 +1,14 @@
 import React from "react";
+import { MessagePresenter } from "../components";
 import { useGetCountryByCodeQuery } from "../features/countries/country-api-service";
-import { MessagePresenter, Pill } from "../components";
+import { Link } from "react-router-dom";
 
 interface Props {
-    code: string;
+    name: string;
 }
 
-export const FlagDetail: React.FC<Props> = ({ code }) => {
-    const { data, error, isLoading } = useGetCountryByCodeQuery(code);
+export const FlagDetail: React.FC<Props> = ({ name }) => {
+    const { data, error, isLoading } = useGetCountryByCodeQuery(name);
 
     if (isLoading) return <MessagePresenter message="Loading ..." />;
 
@@ -15,7 +16,7 @@ export const FlagDetail: React.FC<Props> = ({ code }) => {
         return <MessagePresenter message="Error while fetching countries" />;
 
     if (!data) {
-        return <MessagePresenter message="Didnt find any countries." />;
+        return <MessagePresenter message="Didnt find that country." />;
     }
 
     return (
@@ -79,7 +80,13 @@ export const FlagDetail: React.FC<Props> = ({ code }) => {
                         </div>
                         <div className="flex items-center gap-4 flex-wrap">
                             {data.borders.map((land, index) => (
-                                <Pill key={index}>{land}</Pill>
+                                <Link
+                                    to={`/detail/${land}`}
+                                    key={index}
+                                    className="bg-light-primary dark:bg-dark-primary text-light-text dark:text-dark-text py-1 px-5 inline-block text-xs rounded-md shadow-md"
+                                >
+                                    {land}
+                                </Link>
                             ))}
                         </div>
                     </div>
